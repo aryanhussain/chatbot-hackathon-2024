@@ -1,0 +1,881 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "hello": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "hi": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "hey,there": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "good,morn": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "afternoon,good": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "default": {
+            "intent": "greeting",
+            "domain": "master_domain"
+          },
+          "about,me,menu,tell,your": {
+            "intent": "menu",
+            "domain": "default"
+          },
+          "do,serv,what,you": {
+            "intent": "menu",
+            "domain": "default"
+          },
+          "dish,me,show,your": {
+            "intent": "menu",
+            "domain": "default"
+          },
+          "do,have,option,vegetarian,you": {
+            "intent": "menu",
+            "domain": "default"
+          },
+          "are,special,what,your": {
+            "intent": "menu",
+            "domain": "default"
+          },
+          "a,for,make,reserv,tomorrow": {
+            "intent": "reservation",
+            "domain": "default"
+          },
+          "a,book,for,friday,on,tabl,two": {
+            "intent": "reservation",
+            "domain": "default"
+          },
+          "a,dinner,for,reserv,spot": {
+            "intent": "reservation",
+            "domain": "default"
+          },
+          "a,book,can,i,tabl": {
+            "intent": "reservation",
+            "domain": "default"
+          },
+          "are,hour,open,what,your": {
+            "intent": "hours",
+            "domain": "default"
+          },
+          "and,close,do,open,when,you": {
+            "intent": "hours",
+            "domain": "default"
+          },
+          "busi,hour,me,tell,your": {
+            "intent": "hours",
+            "domain": "default"
+          },
+          "can,i,visit,when": {
+            "intent": "hours",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greeting": "master_domain",
+          "menu": "default",
+          "reservation": "default",
+          "hours": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey there",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good morning",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good afternoon",
+            "intent": "greeting"
+          },
+          {
+            "domain": "master_domain",
+            "utterance": "default",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me about your menu",
+            "intent": "menu"
+          },
+          {
+            "domain": "default",
+            "utterance": "what do you serve?",
+            "intent": "menu"
+          },
+          {
+            "domain": "default",
+            "utterance": "show me your dishes",
+            "intent": "menu"
+          },
+          {
+            "domain": "default",
+            "utterance": "do you have vegetarian options?",
+            "intent": "menu"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are your specials?",
+            "intent": "menu"
+          },
+          {
+            "domain": "default",
+            "utterance": "make a reservation for tomorrow",
+            "intent": "reservation"
+          },
+          {
+            "domain": "default",
+            "utterance": "book a table for two on Friday",
+            "intent": "reservation"
+          },
+          {
+            "domain": "default",
+            "utterance": "reserve a spot for dinner",
+            "intent": "reservation"
+          },
+          {
+            "domain": "default",
+            "utterance": "can I book a table?",
+            "intent": "reservation"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are your opening hours?",
+            "intent": "hours"
+          },
+          {
+            "domain": "default",
+            "utterance": "when do you open and close?",
+            "intent": "hours"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me your business hours",
+            "intent": "hours"
+          },
+          {
+            "domain": "default",
+            "utterance": "when can I visit?",
+            "intent": "hours"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "hello": 1,
+              "hi": 1,
+              "hey": 1,
+              "there": 1,
+              "good": 1,
+              "morn": 1,
+              "afternoon": 1,
+              "default": 1,
+              "tell": 1,
+              "me": 1,
+              "about": 1,
+              "your": 1,
+              "menu": 1,
+              "what": 1,
+              "do": 1,
+              "you": 1,
+              "serv": 1,
+              "show": 1,
+              "dish": 1,
+              "have": 1,
+              "vegetarian": 1,
+              "option": 1,
+              "are": 1,
+              "special": 1,
+              "make": 1,
+              "a": 1,
+              "reserv": 1,
+              "for": 1,
+              "tomorrow": 1,
+              "book": 1,
+              "tabl": 1,
+              "two": 1,
+              "on": 1,
+              "friday": 1,
+              "spot": 1,
+              "dinner": 1,
+              "can": 1,
+              "i": 1,
+              "open": 1,
+              "hour": 1,
+              "when": 1,
+              "and": 1,
+              "close": 1,
+              "busi": 1,
+              "visit": 1
+            },
+            "intents": {
+              "greeting": 1,
+              "menu": 1,
+              "reservation": 1,
+              "hours": 1
+            },
+            "intentFeatures": {
+              "greeting": {
+                "hello": 1,
+                "hi": 1,
+                "hey": 1,
+                "there": 1,
+                "good": 1,
+                "morn": 1,
+                "afternoon": 1,
+                "default": 1
+              },
+              "menu": {
+                "tell": 1,
+                "me": 1,
+                "about": 1,
+                "your": 1,
+                "menu": 1,
+                "what": 1,
+                "do": 1,
+                "you": 1,
+                "serv": 1,
+                "show": 1,
+                "dish": 1,
+                "have": 1,
+                "vegetarian": 1,
+                "option": 1,
+                "are": 1,
+                "special": 1
+              },
+              "reservation": {
+                "make": 1,
+                "a": 1,
+                "reserv": 1,
+                "for": 1,
+                "tomorrow": 1,
+                "book": 1,
+                "tabl": 1,
+                "two": 1,
+                "on": 1,
+                "friday": 1,
+                "spot": 1,
+                "dinner": 1,
+                "can": 1,
+                "i": 1
+              },
+              "hours": {
+                "what": 1,
+                "are": 1,
+                "your": 1,
+                "open": 1,
+                "hour": 1,
+                "when": 1,
+                "do": 1,
+                "you": 1,
+                "and": 1,
+                "close": 1,
+                "tell": 1,
+                "me": 1,
+                "busi": 1,
+                "can": 1,
+                "i": 1,
+                "visit": 1
+              }
+            },
+            "featuresToIntent": {
+              "hello": [
+                "greeting"
+              ],
+              "hi": [
+                "greeting"
+              ],
+              "hey": [
+                "greeting"
+              ],
+              "there": [
+                "greeting"
+              ],
+              "good": [
+                "greeting"
+              ],
+              "morn": [
+                "greeting"
+              ],
+              "afternoon": [
+                "greeting"
+              ],
+              "default": [
+                "greeting"
+              ],
+              "tell": [
+                "menu",
+                "hours"
+              ],
+              "me": [
+                "menu",
+                "hours"
+              ],
+              "about": [
+                "menu"
+              ],
+              "your": [
+                "menu",
+                "hours"
+              ],
+              "menu": [
+                "menu"
+              ],
+              "what": [
+                "menu",
+                "hours"
+              ],
+              "do": [
+                "menu",
+                "hours"
+              ],
+              "you": [
+                "menu",
+                "hours"
+              ],
+              "serv": [
+                "menu"
+              ],
+              "show": [
+                "menu"
+              ],
+              "dish": [
+                "menu"
+              ],
+              "have": [
+                "menu"
+              ],
+              "vegetarian": [
+                "menu"
+              ],
+              "option": [
+                "menu"
+              ],
+              "are": [
+                "menu",
+                "hours"
+              ],
+              "special": [
+                "menu"
+              ],
+              "make": [
+                "reservation"
+              ],
+              "a": [
+                "reservation"
+              ],
+              "reserv": [
+                "reservation"
+              ],
+              "for": [
+                "reservation"
+              ],
+              "tomorrow": [
+                "reservation"
+              ],
+              "book": [
+                "reservation"
+              ],
+              "tabl": [
+                "reservation"
+              ],
+              "two": [
+                "reservation"
+              ],
+              "on": [
+                "reservation"
+              ],
+              "friday": [
+                "reservation"
+              ],
+              "spot": [
+                "reservation"
+              ],
+              "dinner": [
+                "reservation"
+              ],
+              "can": [
+                "reservation",
+                "hours"
+              ],
+              "i": [
+                "reservation",
+                "hours"
+              ],
+              "open": [
+                "hours"
+              ],
+              "hour": [
+                "hours"
+              ],
+              "when": [
+                "hours"
+              ],
+              "and": [
+                "hours"
+              ],
+              "close": [
+                "hours"
+              ],
+              "busi": [
+                "hours"
+              ],
+              "visit": [
+                "hours"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "hello",
+                "hi",
+                "hey",
+                "there",
+                "good",
+                "morn",
+                "afternoon",
+                "default",
+                "tell",
+                "me",
+                "about",
+                "your",
+                "menu",
+                "what",
+                "do",
+                "you",
+                "serv",
+                "show",
+                "dish",
+                "have",
+                "vegetarian",
+                "option",
+                "are",
+                "special",
+                "make",
+                "a",
+                "reserv",
+                "for",
+                "tomorrow",
+                "book",
+                "tabl",
+                "two",
+                "on",
+                "friday",
+                "spot",
+                "dinner",
+                "can",
+                "i",
+                "open",
+                "hour",
+                "when",
+                "and",
+                "close",
+                "busi",
+                "visit"
+              ],
+              "intents": [
+                "greeting",
+                "menu",
+                "reservation",
+                "hours"
+              ],
+              "perceptrons": [
+                [
+                  6.034221649169922,
+                  6.141458988189697,
+                  3.2720868587493896,
+                  3.2720868587493896,
+                  4.311141014099121,
+                  2.177741765975952,
+                  2.147195339202881,
+                  6.03080415725708,
+                  -1.1403878927230835,
+                  -2.2375648021698,
+                  -0.7044760584831238,
+                  -3.47588849067688,
+                  -0.7044760584831238,
+                  -2.1964993476867676,
+                  -2.3776674270629883,
+                  -2.3776674270629883,
+                  -0.9590710401535034,
+                  -1.0946202278137207,
+                  -1.0946202278137207,
+                  -1.0451513528823853,
+                  -1.0451513528823853,
+                  -1.0451513528823853,
+                  -1.2348905801773071,
+                  -0.9786449074745178,
+                  -0.8195472359657288,
+                  -2.5557284355163574,
+                  -1.625838279724121,
+                  -2.093862295150757,
+                  -0.8195472359657288,
+                  -0.9284864068031311,
+                  -0.9284864068031311,
+                  -0.46662044525146484,
+                  -0.46662044525146484,
+                  -0.46662044525146484,
+                  -0.8045681715011597,
+                  -0.8045681715011597,
+                  -2.105557680130005,
+                  -2.105557680130005,
+                  -0.6193814277648926,
+                  -0.647417426109314,
+                  -2.014784097671509,
+                  -0.3492140471935272,
+                  -0.3492140471935272,
+                  -0.39117231965065,
+                  -1.6436909437179565,
+                  7.900969021714257
+                ],
+                [
+                  -1.0036983489990234,
+                  -0.9904439449310303,
+                  -0.5855552554130554,
+                  -0.5855552554130554,
+                  -0.8317536115646362,
+                  -0.4213813543319702,
+                  -0.3909199833869934,
+                  -0.9631412625312805,
+                  0.10179638862609863,
+                  3.0881447792053223,
+                  2.9331393241882324,
+                  4.204333305358887,
+                  2.9331393241882324,
+                  3.8372128009796143,
+                  3.359452724456787,
+                  3.359452724456787,
+                  2.722320079803467,
+                  2.986478090286255,
+                  2.986478090286255,
+                  2.1754369735717773,
+                  2.1754369735717773,
+                  2.1754369735717773,
+                  1.1166480779647827,
+                  3.9897141456604004,
+                  -0.2540077567100525,
+                  -0.943347692489624,
+                  -0.4828992187976837,
+                  -0.724371075630188,
+                  -0.2540077567100525,
+                  -0.4043285548686981,
+                  -0.4043285548686981,
+                  -0.15990374982357025,
+                  -0.15990374982357025,
+                  -0.15990374982357025,
+                  -0.16447176039218903,
+                  -0.16447176039218903,
+                  -0.3132990002632141,
+                  -0.3132990002632141,
+                  -4.417128562927246,
+                  -5.710717678070068,
+                  -1.5732312202453613,
+                  -1.4258555173873901,
+                  -1.4258555173873901,
+                  -2.8231849670410156,
+                  -0.09104350954294205,
+                  1.0305390247849702
+                ],
+                [
+                  -0.4725777804851532,
+                  -0.4658946692943573,
+                  -0.3071441054344177,
+                  -0.3071441054344177,
+                  -0.4728740453720093,
+                  -0.22370955348014832,
+                  -0.2003815621137619,
+                  -0.45246294140815735,
+                  -0.21444714069366455,
+                  -0.3009898364543915,
+                  -0.058760516345500946,
+                  -0.5547648668289185,
+                  -0.058760516345500946,
+                  -0.31510499119758606,
+                  -0.3664023280143738,
+                  -0.3664023280143738,
+                  -0.06748950481414795,
+                  -0.05290086567401886,
+                  -0.05290086567401886,
+                  -0.08266206085681915,
+                  -0.08266206085681915,
+                  -0.08266206085681915,
+                  -0.20794197916984558,
+                  -0.03052433207631111,
+                  1.3774610757827759,
+                  5.5398077964782715,
+                  2.763392448425293,
+                  2.7648885250091553,
+                  1.3774610757827759,
+                  2.775987386703491,
+                  2.775987386703491,
+                  0.005649401340633631,
+                  0.005649401340633631,
+                  0.005649401340633631,
+                  1.385369896888733,
+                  1.385369896888733,
+                  1.3318510055541992,
+                  1.3318510055541992,
+                  -0.3126843273639679,
+                  -0.2996262013912201,
+                  -1.6295958757400513,
+                  -0.12420953810214996,
+                  -0.12420953810214996,
+                  -0.1124931201338768,
+                  -1.4423298835754395,
+                  0.45385012767655264
+                ],
+                [
+                  -0.5413375496864319,
+                  -0.5236527919769287,
+                  -0.3975047767162323,
+                  -0.3975047767162323,
+                  -0.661009669303894,
+                  -0.3122275769710541,
+                  -0.27964693307876587,
+                  -0.48339197039604187,
+                  1.6649101972579956,
+                  0.46577033400535583,
+                  -1.9813461303710938,
+                  1.38077712059021,
+                  -1.9813461303710938,
+                  -0.23338079452514648,
+                  -0.04684802144765854,
+                  -0.04684802144765854,
+                  -1.0938142538070679,
+                  -1.1855430603027344,
+                  -1.1855430603027344,
+                  -0.5679590702056885,
+                  -0.5679590702056885,
+                  -0.5679590702056885,
+                  0.9140397906303406,
+                  -2.2402689456939697,
+                  -0.06862536817789078,
+                  -1.7382069826126099,
+                  -0.1396128386259079,
+                  -0.21563813090324402,
+                  -0.06862536817789078,
+                  -1.5712987184524536,
+                  -1.5712987184524536,
+                  -0.05000556632876396,
+                  -0.05000556632876396,
+                  -0.05000556632876396,
+                  -0.043719250708818436,
+                  -0.043719250708818436,
+                  2.287984609603882,
+                  2.287984609603882,
+                  4.948945999145508,
+                  6.8245768547058105,
+                  5.568633556365967,
+                  1.779939889907837,
+                  1.779939889907837,
+                  3.6555397510528564,
+                  3.7890262603759766,
+                  0.32482564894527305
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "hey there"
+      ],
+      [
+        "en",
+        "good morning"
+      ],
+      [
+        "en",
+        "good afternoon"
+      ],
+      [
+        "en",
+        "greeting"
+      ],
+      [
+        "en",
+        "tell me about your menu"
+      ],
+      [
+        "en",
+        "what do you serve?"
+      ],
+      [
+        "en",
+        "show me your dishes"
+      ],
+      [
+        "en",
+        "do you have vegetarian options?"
+      ],
+      [
+        "en",
+        "what are your specials?"
+      ],
+      [
+        "en",
+        "make a reservation for tomorrow"
+      ],
+      [
+        "en",
+        "book a table for two on Friday"
+      ],
+      [
+        "en",
+        "reserve a spot for dinner"
+      ],
+      [
+        "en",
+        "can I book a table?"
+      ],
+      [
+        "en",
+        "what are your opening hours?"
+      ],
+      [
+        "en",
+        "when do you open and close?"
+      ],
+      [
+        "en",
+        "tell me your business hours"
+      ],
+      [
+        "en",
+        "when can I visit?"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "greeting": [
+          {
+            "answer": "hi, good day !"
+          }
+        ],
+        "menu": [
+          {
+            "answer": "Our menu includes a variety of delicious items, including:\n- Margherita Pizza\n- Spaghetti Bolognese\n- Tiramisu\n- Garlic Bread\n- Vegetable Stir-Fry"
+          }
+        ],
+        "reservation": [
+          {
+            "answer": "Sure, I can help you with that. Please provide details like date, time, and number of guests."
+          }
+        ],
+        "hours": [
+          {
+            "answer": "We are open from 7 am to 11 pm every day. Come and visit us!"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
