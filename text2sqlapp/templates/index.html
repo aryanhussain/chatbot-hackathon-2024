@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text2SQL App</title>
+</head>
+<body>
+    <h1>Welcome to the Text2SQL App!</h1>
+    
+    <form method="POST" action="{% url 'index' %}">
+        {% csrf_token %}
+        <label for="query">Enter your query:</label><br>
+        <input type="text" id="query" name="query" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <!-- <form id="translateForm" method="POST">
+        {% csrf_token %}
+        <input type="text" id="queryInput" name="query" placeholder="Enter your query" required>
+        <button type="button" onclick="submitForm()">Translate</button>
+    </form> -->
+
+    {% if sql %}
+    <h2>Generated SQL:</h2>
+    <p>{{ sql }}</p>
+    {% endif %}
+</body>
+<!-- <script>
+    function submitForm() {
+        var query = document.getElementById("queryInput").value;
+        var form = document.getElementById("translateForm");
+        form.action = "{% url 'translate_to_sql' %}?query=" + encodeURIComponent(query);
+        form.submit();
+    }
+</script> -->
+</html>
